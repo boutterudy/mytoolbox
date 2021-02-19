@@ -1,0 +1,7 @@
+.toolboxIcon {
+  font-size: 70px;
+  color: var(--primary-accent-color);
+  display: block;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}

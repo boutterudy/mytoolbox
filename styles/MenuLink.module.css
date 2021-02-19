@@ -1,0 +1,52 @@
+.iconMenuLink {
+  font-size: 25px;
+  background-color: #9A7EFF;
+  color: var(--primary-bg-color);
+  vertical-align: baseline;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 53px;
+  height: 53px;
+  border-radius: 8.6px;
+  margin-right: 18px;
+}
+
+.iconMenuLink::before {
+  vertical-align: middle;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  transition: background-color .3s, padding .3s, margin .3s;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.link:hover {
+  color: inherit;
+  text-decoration: none;
+  background-color: var(--secondary-accent-color);
+  padding: 15px;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+
+.nameMenuLink,
+.descriptionMenuLink {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.nameMenuLink {
+  color: white;
+  font-weight: 400;
+}
+
+.descriptionMenuLink {
+  color: #7D7D7D;
+  font-weight: 200;
+}

@@ -1,0 +1,46 @@
+:root {
+  /* Background Colors */
+  --primary-bg-color: #151719;
+  --secondary-bg-color: #FFFFFF;
+
+  /* On Background Colors */
+  --on-primary-bg-main-color: #FFFFFF;
+  --on-primary-bg-second-color: #D5D5D5;
+  --on-secondary-bg-main-color: #1A1A1A;
+
+  /* Accent Color */
+  --primary-accent-color: #23FFDA;
+  --secondary-accent-color: #64646426;
+}
+
+:global {
+  /* Background Primay Color */
+  .primaryBgColor {
+    background-color: var(--primary-bg-color);
+  }
+
+  /* Background Secondary Color */
+  .secondaryBgColor {
+    background-color: var(--secondary-bg-color);
+  }
+
+  /* On Primary Background Main Color */
+  .onPrimaryBgMainColor {
+    color: var(--on-primary-bg-main-color);
+  }
+
+  /* On Primary Background Second Color */
+  .onPrimaryBgMainColor {
+    color: var(--on-primary-bg-second-color);
+  }
+
+  /* On Secondary Background Main Color */
+  .onPrimaryBgMainColor {
+    color: var(--on-secondary-bg-main-color);
+  }
+
+  /* Accent Color */
+  .accentColor {
+    color: var(--primary-accent-color);
+  }
+}

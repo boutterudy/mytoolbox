@@ -1,0 +1,16 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--primary-bg-color);
+  color: var(--on-primary-bg-main-color);
+  width: 400px;
+  height: 100vh;
+  padding-left: 54px;
+}

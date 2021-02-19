@@ -1,0 +1,46 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: fit-content;
+  margin-bottom: 38px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.project .projectIcon {
+  background-color: var(--primary-bg-color);
+  color: var(--on-primary-bg-main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+  width: 280px;
+  border-radius: 8.6px;
+  font-size: 50px;
+  transition: color .3s, background-color .3s;
+}
+
+.project:hover .projectIcon {
+  background-color: var(--primary-accent-color);
+  color: var(--primary-bg-color);
+}
+
+.project .projectName,
+.project .projectClickToOpen {
+  color: var(--primary-bg-color);
+  font-size: 21px;
+  line-height: 1;
+  margin: 0;
+}
+
+.project .projectName {
+  margin-top: 9.4px;
+  font-weight: 600;
+}
+
+.project .projectClickToOpen {
+  font-weight: 200;
+  margin-top: 8.6px;
+}
