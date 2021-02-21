@@ -23,6 +23,7 @@ export default class PasswordGenerator extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.generatePassword = this.generatePassword.bind(this);
+    this.generateRandomPassword = this.generateRandomPassword.bind(this);
   }
 
   generatePassword() {
@@ -86,6 +87,12 @@ export default class PasswordGenerator extends React.Component {
       return password;
   }
 
+  generateRandomPassword() {
+    this.setState({
+      generatedPassword: this.generatePassword(),
+    });
+  }
+
   handleChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -112,9 +119,7 @@ export default class PasswordGenerator extends React.Component {
               symbols: false,
             });
 
-            this.setState({
-              generatedPassword: this.generatePassword(),
-            });
+            this.generateRandomPassword();
             break;
           case "easyToRead":
             this.setState({
@@ -123,9 +128,7 @@ export default class PasswordGenerator extends React.Component {
               avoidAmbiguousCharacters: true,
             });
 
-            this.setState({
-              generatedPassword: this.generatePassword(),
-            });
+            this.generateRandomPassword();
             break;
           case "allCharacters":
             this.setState({
@@ -138,15 +141,13 @@ export default class PasswordGenerator extends React.Component {
               symbols: true,
             });
 
-            this.setState({
-              generatedPassword: this.generatePassword(),
-            });
+            this.generateRandomPassword();
             break;
           default:
           break;
         }
       } else {
-        this.setState({generatedPassword: this.generatePassword()});
+        this.generateRandomPassword();
       }
 
     });
@@ -158,19 +159,19 @@ export default class PasswordGenerator extends React.Component {
         <div className={style.generatePasswordInputGroup}>
           <Input name="generatedPassword" type="text" minLength="1" maxLength="3000" value={this.state.generatedPassword} />
           <div className={style.inputGroupText}>
-            <span className={style.copyGeneratedPasswordToClipboard}>
-              <Icon lib="boostrap" icon="clipboard-plus" />
+            <span className={style.copyGeneratedPasswordToClipboard} onClick={() => {navigator.clipboard.writeText(this.state.generatedPassword)}}>
+             <Icon lib="boostrap" icon="clipboard-plus" />
             </span>
-            <span className={style.generateRandomPasswordButton}>
+            <span className={style.generateRandomPasswordButton} onClick={this.generateRandomPassword}>
               <Icon lib="boostrap" icon="shuffle" />
             </span>
           </div>
         </div>
         <form>
-          <div className={style.length}>
-            <label htmlFor="length">Length : {this.state.length}</label>
-            <Input id="length" name="length" type="number" min="1" max="3000" value={this.state.length} onChange={this.handleChange} />
-            <Input id="length" name="length" type="range" min="1" max="3000" value={this.state.length} onChange={this.handleChange} />
+          <div className={style.generatePasswordLengthContainer}>
+            <label htmlFor="length">Length :</label>
+            <Input id="length" className={style.generatePasswordLengthInputText} name="length" type="number" min="1" max="3000" value={this.state.length} onChange={this.handleChange} />
+            <Input id="length" className={style.generatePasswordLengthInputRange} name="length" type="range" min="1" max="3000" value={this.state.length} onChange={this.handleChange} />
           </div>
           <div className={style.optionsToGeneratePassword}>
             <div className={style.optionGeneratePassword}>

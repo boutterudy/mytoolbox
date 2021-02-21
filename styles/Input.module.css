@@ -1,4 +1,5 @@
-.input {
+.input[type=text],
+.input[type=number] {
   padding: 11px 21px 10px;
   border: 2px solid var(--primary-bg-color);
   font-size: 17px;
