@@ -61,8 +61,17 @@ export default class PasswordGenerator extends React.Component {
         chars += up;
       }
 
-      // Check error
-      if (chars.length == 0) {
+      // Check errors
+      // If length is lower than 1
+      if (this.state.length < 1) {
+        return "Length must be greater than zero"
+
+      // If length is greater than 3000
+      } else if (this.state.length > 3000) {
+        return "Length must be lower than 3000"
+
+      // If no option is selected
+      } else if (chars.length == 0) {
         return "Please select one option"
 
       // If no error, generate password
@@ -82,55 +91,70 @@ export default class PasswordGenerator extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
-    this.setState({
-      [name]: value
-    });
+    this.setState(function() {
+      return {
+        [name]: value,
+      };
+    },
 
-    if (name === "globalChoice") {
-      switch (value) {
-        case "easyToSay":
-          this.setState({
-            numbersDisabled: true,
-            symbolsDisabled: true,
-            avoidAmbiguousCharacters: false,
-            lowercase: true,
-            uppercase: true,
-            numbers: false,
-            symbols: false,
-            generatedPassword: this.generatePassword(),
-          });
+    // After state changes
+    function() {
+      if (name === "globalChoice") {
+        switch (value) {
+          case "easyToSay":
+            this.setState({
+              numbersDisabled: true,
+              symbolsDisabled: true,
+              avoidAmbiguousCharacters: false,
+              lowercase: true,
+              uppercase: true,
+              numbers: false,
+              symbols: false,
+            });
+
+            this.setState({
+              generatedPassword: this.generatePassword(),
+            });
+            break;
+          case "easyToRead":
+            this.setState({
+              numbersDisabled: false,
+              symbolsDisabled: false,
+              avoidAmbiguousCharacters: true,
+            });
+
+            this.setState({
+              generatedPassword: this.generatePassword(),
+            });
+            break;
+          case "allCharacters":
+            this.setState({
+              numbersDisabled: false,
+              symbolsDisabled: false,
+              avoidAmbiguousCharacters: false,
+              lowercase: true,
+              uppercase: true,
+              numbers: true,
+              symbols: true,
+            });
+
+            this.setState({
+              generatedPassword: this.generatePassword(),
+            });
+            break;
+          default:
           break;
-        case "easyToRead":
-          this.setState({
-            numbersDisabled: false,
-            symbolsDisabled: false,
-            avoidAmbiguousCharacters: true,
-            generatedPassword: this.generatePassword(),
-          });
-          break;
-        case "allCharacters":
-          this.setState({
-            numbersDisabled: false,
-            symbolsDisabled: false,
-            avoidAmbiguousCharacters: false,
-            lowercase: true,
-            uppercase: true,
-            numbers: true,
-            symbols: true,
-            generatedPassword: this.generatePassword(),
-          });
-          break;
-        default:
-        break;
+        }
+      } else {
+        this.setState({generatedPassword: this.generatePassword()});
       }
-    } else {
-      this.setState({generatedPassword: this.generatePassword()});
-    }
+
+    });
   }
 
   render() {
     return (
-      <div>
+      <div className={style.generatePasswordGlobalContainer}>
         <div className={style.generatePasswordInputGroup}>
           <Input name="generatedPassword" type="text" minLength="1" maxLength="3000" value={this.state.generatedPassword} />
           <div className={style.inputGroupText}>
