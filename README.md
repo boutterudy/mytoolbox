@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="assets/web-demo.gif" alt="Web interface demo GIF" />
-  Available here : [http://rudy.cloud/](http://rudy.cloud/)
+  Available here : http://rudy.cloud/
 </p>
 
 ## ✨ Features
