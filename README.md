@@ -5,10 +5,9 @@
 
 **MyToolBox** is a free and open source collection of small and easy to use tools and personal projects.
 
-Available here : [http://rudy.cloud/](http://rudy.cloud/)
-
 <p align="center">
   <img src="assets/web-demo.gif" alt="Web interface demo GIF" />
+  Available here : [http://rudy.cloud/](http://rudy.cloud/)
 </p>
 
 ## ✨ Features
