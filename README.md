@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">MyToolBox</h1>
 
-## Getting Started
 
-First, run the development server:
+<p align="center">🛠️ 🧰</p>
 
+**MyToolBox** is a free and open source collection of small and easy to use tools and personal projects.
+
+<p align="center">
+  <img src="assets/web-demo.gif" alt="Web interface demo GIF" />
+</p>
+
+## ✨ Features
+
+ - [X] Listing my mains GitHub projects
+ - [X] Password Generator Tool
+
+## Getting started
+
+### Install dependencies
 ```bash
-npm run dev
+npm install
 # or
-yarn dev
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run the server
+```bash
+npm run start
+# or
+yarn start
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Contributing
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Heeey! I am very happy to know that you are considering contributing to MyToolBox! If you think anything is missing or could be improved, please open the issues and fill in your suggestions or requests. If you want to make this project grow, I will be happy to have your help!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 💌 Contact
 
-## Learn More
+Feel free to contact me about any questions you may have:
+* At [btte.rudy@gmail.com](mailto:btte.rudy@gmail.com)
+* By opening an issue.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+MyToolBox is developed by [Rudy Boutte](https://github.com/boutterudy), a young passionate developer. Any suggestion or feedback is highly appreciated. Thank you for your support!
