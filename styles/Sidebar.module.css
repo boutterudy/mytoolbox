@@ -1,5 +1,22 @@
+/* Mobile */
 .sidebar {
-  position: sticky;
+  background-color: transparent;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 35px;
+  z-index: 10000;
+  position: fixed;
+  overflow: auto;
+}
+
+.content {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 280px;
+}
+
+.sidebar.expanded {
   top: 0;
   left: 0;
   float: left;
@@ -10,7 +27,49 @@
   align-items: flex-start;
   background-color: var(--primary-bg-color);
   color: var(--on-primary-bg-main-color);
-  width: 400px;
+  width: 100vw;
   height: 100vh;
-  padding-left: 54px;
+}
+
+.sidebar.expanded > .content {
+  display: block;
+}
+
+.burger {
+  font-size: 32px;
+  cursor: pointer;
+  background-color: var(--primary-bg-color);
+  color: var(--on-primary-bg-main-color);
+  border-radius: 5px;
+  padding: 6px;
+  height: fit-content;
+  z-index: 15000;
+}
+
+/* Laptop */
+@media (min-width: 769px) {
+  .sidebar,
+  .sidebar.expanded {
+    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: var(--primary-bg-color);
+    color: var(--on-primary-bg-main-color);
+    width: 400px;
+    height: 100vh;
+  }
+  .burger {
+    display: none;
+  }
+
+  .content {
+    display: block;
+  }
 }

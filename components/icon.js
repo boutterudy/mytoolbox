@@ -1,25 +1,18 @@
 import React from 'react';
 
-export default class Icon extends React.Component {
-  constructor(props) {
-    super(props);
+const Icon = ({ lib, icon, className, onClick }) => {
+  let iconClass;
+  switch (lib) {
+    case 'boostrap':
+      if (icon === undefined) {
+        iconClass = className + ' bi';
+      } else {
+        iconClass = className + ' bi bi-' + icon;
+      }
+      break;
+    default:
   }
+  return <i className={iconClass} onClick={onClick}></i>;
+};
 
-  render() {
-    let iconClass;
-    switch (this.props.lib) {
-      case "boostrap":
-        if (this.props.icon === undefined) {
-          iconClass = this.props.className + " bi"
-        } else {
-          iconClass = this.props.className + " bi bi-" + this.props.icon;
-        }
-        break;
-      default:
-
-    }
-    return (
-      <i className={iconClass}></i>
-    );
-  }
-}
+export default Icon;
